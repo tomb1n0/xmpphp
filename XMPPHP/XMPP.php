@@ -351,6 +351,7 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 	protected function roster_iq_handler($xml) {
 		$status = "result";
 		$xmlroster = $xml->sub('query');
+                $contacts  = array();
 		foreach($xmlroster->subs as $item) {
 			$groups = array();
 			if ($item->name == 'item') {
