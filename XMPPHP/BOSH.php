@@ -165,7 +165,7 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 			$body->addAttribute('to', $this->host);
 			$body->addAttribute('xmpp:restart', 'true', 'urn:xmpp:xbosh');
 			$buff = "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>";
-			$response = $this->__sendBody($body);
+			$this->__sendBody($body);
 			$this->been_reset = true;
 			xml_parse($this->parser, $buff, false);
 		}
