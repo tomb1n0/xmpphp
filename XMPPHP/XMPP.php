@@ -131,13 +131,20 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 		$this->stream_end   = '</stream:stream>';
 		$this->default_ns   = 'jabber:client';
 		
-		$this->addXPathHandler('{http://etherx.jabber.org/streams}features', 'features_handler');
-		$this->addXPathHandler('{urn:ietf:params:xml:ns:xmpp-sasl}success', 'sasl_success_handler');
-		$this->addXPathHandler('{urn:ietf:params:xml:ns:xmpp-sasl}failure', 'sasl_failure_handler');
-		$this->addXPathHandler('{urn:ietf:params:xml:ns:xmpp-tls}proceed', 'tls_proceed_handler');
-		$this->addXPathHandler('{jabber:client}message', 'message_handler');
-		$this->addXPathHandler('{jabber:client}presence', 'presence_handler');
-		$this->addXPathHandler('iq/{jabber:iq:roster}query', 'roster_iq_handler');
+                $xpathHandlers = array(
+                    'features_handler'     => '{http://etherx.jabber.org/streams}features',
+                    'sasl_success_handler' => '{urn:ietf:params:xml:ns:xmpp-sasl}success',
+                    'sasl_failure_handler' => '{urn:ietf:params:xml:ns:xmpp-sasl}failure',
+                    'tls_proceed_handler'  => '{urn:ietf:params:xml:ns:xmpp-tls}proceed',
+                    'message_handler'      => '{jabber:client}message',
+                    'presence_handler'     => '{jabber:client}presence',
+                    'roster_iq_handler'    => 'iq/{jabber:iq:roster}query'
+                );
+
+                foreach ($xpathHandlers as $key => $value) {
+
+                    $this->addXPathHandler($value, $key);
+                }
 	}
 
 	/**
