@@ -224,15 +224,16 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 	 * @param string $xml
 	 */
 	public function message_handler($xml) {
-		if(isset($xml->attrs['type'])) {
-			$payload['type'] = $xml->attrs['type'];
-		} else {
-			$payload['type'] = 'chat';
-		}
-		$body = $xml->sub('body');
-		$payload['from'] = $xml->attrs['from'];
-		$payload['body'] = is_object($body) ? $body->data : FALSE; // $xml->sub('body')->data;
-		$payload['xml'] = $xml;
+
+                $body = $xml->sub('body');
+
+                $payload = array(
+                    'type' => isset($xml->attrs['type']) ? $xml->attrs['type'] : 'chat',
+                    'from' => $xml->attrs['from'],
+                    'body' => is_object($body) ? $body->data : false,
+                    'xml'  => $xml
+                );
+
 		$this->log->log("Message: {$payload['body']}", XMPPHP_Log::LEVEL_DEBUG);
 		$this->event('message', $payload);
 	}
@@ -243,12 +244,16 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 	 * @param string $xml
 	 */
 	public function presence_handler($xml) {
-		$payload['type'] = (isset($xml->attrs['type'])) ? $xml->attrs['type'] : 'available';
-		$payload['show'] = (isset($xml->sub('show')->data)) ? $xml->sub('show')->data : $payload['type'];
-		$payload['from'] = $xml->attrs['from'];
-		$payload['status'] = (isset($xml->sub('status')->data)) ? $xml->sub('status')->data : '';
-		$payload['priority'] = (isset($xml->sub('priority')->data)) ? intval($xml->sub('priority')->data) : 0;
-		$payload['xml'] = $xml;
+
+                $payload = array(
+                    'type'     => $type = isset($xml->attrs['type']) ? $xml->attrs['type'] : 'available',
+                    'show'     => isset($xml->sub('show')->data) ? $xml->sub('show')->data : $type,
+                    'from'     => $xml->attrs['from'],
+                    'status'   => isset($xml->sub('status')->data) ? $xml->sub('status')->data : '',
+                    'priority' => isset($xml->sub('priority')->data) ? intval($xml->sub('priority')->data) : 0,
+                    'xml'      => $xml
+                );
+
 		if($this->track_presence) {
 			$this->roster->setPresence($payload['from'], $payload['priority'], $payload['show'], $payload['status']);
 		}
