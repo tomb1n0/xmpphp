@@ -540,7 +540,6 @@ class XMPPHP_XMLStream {
 		reset($this->until);
 
 		$this->until_count[$event_key] = 0;
-		$updated = '';
 		while (!$this->disconnected
 			&& $this->until_count[$event_key] < 1
 			&& ($timeout == -1 || time() - $start < $timeout)
