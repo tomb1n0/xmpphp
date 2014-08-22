@@ -1,0 +1,30 @@
+{
+    "name": "charlycoste/xmpphp",
+    "description": "XMPPHP is an elegant PHP library for XMPP (aka Jabber, Google Talk, etc).",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Nathan Fritz",
+            "email": "fritzy@netflint.net"
+        },
+        {
+            "name": "Stephan Wentz",
+            "email": "stephan@wentz.it"
+        },
+        {
+            "name": "Christian Weiske",
+            "email": "cweiske@cweiske.de"
+        },
+        {
+            "name": "Ivan Borzenkov",
+            "email": "ivan.borzenkov@gmail.com"
+        },
+        {
+            "name": "Charles-Edouard Coste",
+            "email": "cc@synap.fr"
+        }
+    ],
+    "require": {
+
+    }
+}
