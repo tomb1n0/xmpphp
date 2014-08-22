@@ -715,7 +715,7 @@ class XMPPHP_XMLStream {
 	 * Event?
 	 *
 	 * @param string $name
-	 * @param string $payload
+	 * @param array $payload
 	 */
 	public function event($name, $payload = null) {
 		$this->log->log("EVENT: $name",  XMPPHP_Log::LEVEL_DEBUG);
