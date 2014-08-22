@@ -50,22 +50,7 @@ class Roster {
 	 * 
 	 */
 	public function __construct($roster_array = array()) {
-		if ($this->verifyRoster($roster_array)) {
-			$this->roster_array = $roster_array; //Allow for prepopulation with existing roster
-		} else {
-			$this->roster_array = array();
-		}
-	}
-
-	/**
-	 *
-	 * Check that a given roster array is of a valid structure (empty is still valid)
-	 *
-	 * @param array $roster_array
-	 */
-	protected function verifyRoster($roster_array) {
-		#TODO once we know *what* a valid roster array looks like
-		return True;
+		$this->roster_array = $roster_array; //Allow for prepopulation with existing roster
 	}
 
 	/**
