@@ -3,10 +3,6 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
     define('PHPUnit_MAIN_METHOD', 'AllTests::main');
 }
 
-require_once 'XMPPHP/LogTest.php';
-require_once 'XMPPHP/XMLObjTest.php';
-require_once 'XMPPHP/XMPPTest.php';
-
 class AllTests
 {
     public static function main()

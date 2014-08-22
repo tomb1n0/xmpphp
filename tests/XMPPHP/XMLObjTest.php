@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname(dirname(dirname(__FILE__))) . '/XMPPHP/XMLObj.php';
-
 class XMPPHP_XMLObjTest extends PHPUnit_Framework_TestCase
 {
     public function testToStringNameNamespace()

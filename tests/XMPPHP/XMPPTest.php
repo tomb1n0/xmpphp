@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname(dirname(dirname(__FILE__))) . '/XMPPHP/XMPP.php';
-
 class XMPPHP_XMPPTest extends PHPUnit_Framework_TestCase
 {
     public function testConnectException()
