@@ -65,6 +65,11 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 	/**
 	 * @var string
 	 */
+	protected $jid;
+
+	/**
+	 * @var string
+	 */
 	protected $fulljid;
 	
 	/**
