@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('content-type', 'plain/text');
+header('Content-type: plain/text');
 // activate full error reporting
 //error_reporting(E_ALL & E_STRICT);
 
