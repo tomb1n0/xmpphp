@@ -253,7 +253,7 @@ class XMPPHP_XMPP extends XMPPHP_XMLStream {
 	/**
 	 * Presence handler
 	 *
-	 * @param string $xml
+	 * @param XMPPHP_XMLObj $xml
 	 */
 	public function presence_handler($xml) {
 
