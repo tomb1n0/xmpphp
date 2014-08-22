@@ -193,7 +193,7 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 
                         $values = array(
                             'XMPPHP_BOSH_RID'     => (string) $this->rid,
-                            'XMPPHP_BOSH_SID''    => (string) $this->sid,
+                            'XMPPHP_BOSH_SID'    => (string) $this->sid,
                             'XMPPHP_BOSH_authed'  => (boolean) $this->authed,
                             'XMPPHP_BOSH_jid'     => (string) $this->jid,
                             'XMPPHP_BOSH_fulljid' => (string) $this->fulljid
