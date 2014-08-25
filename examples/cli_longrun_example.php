@@ -73,7 +73,6 @@ try {
                     // check to see who requested this vcard
                     $deliver = array_keys($vcard_request, $pl['from']);
                     // work through the array to generate a message
-                    print_r($pl);
                     $msg = '';
 
                     foreach ($pl as $key => $item) {
